@@ -1,0 +1,122 @@
+// fonts
+
+@mixin PageSection__header--mobile {
+    font-family:'AvenirNextLTPro-Bold', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Bold.otf');
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+@mixin PageSection__subHeader--mobile {
+    font-family:'AvenirNextLTPro-Demi', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Demi.otf');
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+@mixin PageSection__bodyFooter--mobile {
+    font-family:'AvenirNextLTPro-Regular', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Regular.otf');
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+@mixin PageSection__LabelsButtons--mobile {
+    font-family:'AvenirNextLTPro-Regular', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Regular.otf');
+    font-size: 10px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+// fonts Tablet and Desktop
+
+@mixin Page__header--wide {
+    font-family:'AvenirNextLTPro-Bold', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Bold.otf');
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+}
+
+@mixin Section__header--wide {
+    font-family:'AvenirNextLTPro-Regular', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Regular.otf');
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+}
+
+@mixin PageSection__subHeader--wide {
+    font-family:'AvenirNextLTPro-Demi', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Demi.otf');
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+}
+
+@mixin PageSection__bodyFooter--wide {
+    font-family:'AvenirNextLTPro-Regular', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Regular.otf');
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+@mixin PageSection__LabelsButtons--wide {
+    font-family:'AvenirNextLTPro-Regular', sans-serif;
+    src: url('../../assets/Font/AvenirNextLTPro-Regular.otf');
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+// colors
+
+$BrainFlix-Black: #323232;
+$BrainFlix-Blue: #0095FF;
+$Silver: #AFAFAF;
+$White: #FFFFFF;
+
+//SECONDARY COLORS
+
+$BrainFlix-DarkBlack: #000000;
+$BrainFlix-DarkBlue: #0065AD;
+$Mercury: #E1E1E1;
+$Alabaster: #FAFAFA;
+
+//PADDINGS
+
+$bio__margin-inline--mobile: 1rem;
+$bio__margin-inline--tablet: 2.25rem;
+$bio__margin-inline--wide: 6rem;
+
+// PADDING SETS
+
+@mixin bio__margin--mobile {
+    margin-left: $bio__margin-inline--mobile;
+    margin-right: $bio__margin-inline--mobile;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+*,
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.profile-icon {
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    margin-left: 10px; 
+    object-fit: cover; 
+    border: none;
+}
+
