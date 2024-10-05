@@ -63,19 +63,107 @@
     }
 }
 
+.profile-icon-header {
+    @extend .profile-icon;
+    margin-left: 10px;
+}
 
-.button__header {
-    width: 100%;
-
-    & > * {
-        border: none;
-        background-color: $BrainFlix-Blue;
-        color: white;
-        width: 100%;
-        padding-block: 0.5rem;
-        border-radius: 0.25rem;
-
-    }
+.profile-icon-header--wide{
+    @extend .profile-icon;
+    display: none;
 }
 
 
+
+
+// Media queries for tablets
+@media (min-width: 768px) {
+    .searchBar__header {
+        @include bio__margin--tablet;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+
+        & > :first-child{
+            padding-right: 7rem;
+        }
+    }
+
+    .profile-icon-header{
+        display: none;
+    }
+
+    .searchBar__header--input {
+        flex-direction: row;
+        padding-bottom: 0;
+        
+        & > :first-child {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+    }
+
+    .searchBar__header--input{
+        margin-right: 2rem;
+    }
+
+    .button__blue--parent{
+        display: flex;
+    }
+
+    .profile-icon-header--wide{
+        margin-left: 1rem;
+        display: block;
+    }
+
+    .searchBar__header--logo{
+        position: relative;
+        top: 5px;
+    }
+    
+
+}
+
+// Media queries for desktops
+@media (min-width: 1024px) {
+    .searchBar__header {
+        @include bio__margin--wide;
+
+        & > :first-child{
+            padding-right: 15rem;
+        }
+    }
+
+    .profile-icon-header {
+        
+    }
+
+    .searchBar__header--input {
+        
+    }
+
+    .profile-icon-header--wide {
+        
+    }
+
+    .button__blue--parent {
+       
+    }
+
+    .searchBar__header--logo {
+        
+    }
+}
+
+// Media queries for wide screens
+
+@media (min-width: 1440px) {
+    .searchBar__header {
+        @include bio__margin--wide;
+
+        & > :first-child{
+            padding-right: 40rem;
+        }
+    }
+}

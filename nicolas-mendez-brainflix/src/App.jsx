@@ -5,6 +5,7 @@ import Body from './components/Body/body';
 import VideoSuggestions from './components/VideoSuggestions/VideoSuggestions';
 import Data from './data/video-details.json';
 import Comments from './components/Comments/Comments';
+import './App.scss';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,15 +18,24 @@ function App() {
 
   return (
     <div>
+
       <Header />
       <Video currentVideo={currentVideo}/>
-      <Body currentVideo={currentVideo} />
-      <Comments currentVideo={currentVideo}/>
-      <VideoSuggestions 
-        videos={Data} 
-        currentIndex={currentIndex} 
-        handleVideoSelect={handleVideoSelect} 
-      />
+      <div className='bio__flex'>
+            <div className='bio__flex--bodyComments'>
+                  <Body currentVideo={currentVideo} />
+                  <Comments currentVideo={currentVideo}/>
+            </div>
+            <div>
+                  <VideoSuggestions 
+                  videos={Data} 
+                  currentIndex={currentIndex} 
+                  handleVideoSelect={handleVideoSelect} 
+                  />
+            </div>
+      </div>
+
+
     </div>
   );
 }

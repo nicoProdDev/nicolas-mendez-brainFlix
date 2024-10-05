@@ -1,6 +1,29 @@
 @use '../../styles/partials/global' as *;
 
+.video__bio--parent{
+    background-color: $BrainFlix-DarkBlack;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width: 100%;
+}
+
 .video__bio {
     width: 100%;
-    max-width: 500px;
+    // max-width: 680px;
+    border: 2px solid black;
+}
+
+@media (min-width: 768px){
+    .video__bio {
+        padding-left: $bio__margin-inline--tablet;
+        padding-right: $bio__margin-inline--tablet;
+    }
+}
+
+@media (min-width: 1024px) {
+    .video__bio {
+        padding-left: 10rem;
+        padding-right: 10rem
+    }
 }

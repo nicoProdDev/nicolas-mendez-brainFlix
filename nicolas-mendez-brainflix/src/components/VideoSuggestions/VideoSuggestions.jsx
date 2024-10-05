@@ -4,15 +4,20 @@ import './videoSuggestions.scss';
 const VideoSuggestions = ({ videos, currentIndex, handleVideoSelect }) => {
   return (
     <div>
-      <h2>Next Videos</h2>
-      <ul>
+      <h2 className='videoSuggestions__bio--title'>NEXT VIDEOS</h2>
+      <ul className='videoSuggestions__bio'>
         {videos.map((video, index) => (
           index !== currentIndex && (
             <li key={index} onClick={() => handleVideoSelect(index)}>
               <div>
-              <img src={video.image} alt={video.title} style={{ width: '50px', height: '50px', marginRight: '10px' }} />
+              <img 
+                src={video.image} 
+                alt={video.title} 
+                
+                className='videoSuggestions__bio--cover'
+              />
               </div>
-              <div>
+              <div className='videoSuggestions__bio--info'>
                 <p>{video.title}</p>
                 <p>{video.channel}</p>
               </div>

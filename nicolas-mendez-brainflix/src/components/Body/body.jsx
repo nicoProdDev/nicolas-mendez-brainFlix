@@ -4,6 +4,12 @@ import viewsIcon from '../../assets/Icons/views.svg';
 import likesIcon from '../../assets/Icons/likes.svg';
 
 const Body = ({ currentVideo }) => {
+
+  function unixToReadable(timestamp) {
+    const date = new Date(timestamp);
+    return date.toLocaleDateString();
+  } 
+
   return (
     <div className='body__bio'>
       <div className='body__bio--title'>
@@ -12,15 +18,15 @@ const Body = ({ currentVideo }) => {
       <div className='body__bio--metadata'>
             <div>
                 <p>{`By ${currentVideo.channel}`}</p>
-                <p>{currentVideo.timestamp}</p>
+                <p>{unixToReadable(currentVideo.timestamp)}</p>
             </div>
             <div className='body__bio--metadata--Numeric'>
-                <div>
-                    <img src={viewsIcon} alt="views Icon"/>
+                <div className='body__bio--metadata--Numeric--user'>
+                    <img src={viewsIcon} alt="views Icon" className='body__bio--metadata--Numeric--icon'/>
                     <p>{currentVideo.views}</p>
                 </div>
                 <div>
-                    <img src={likesIcon} alt="likes Icon"/>
+                    <img src={likesIcon} alt="likes Icon" className='body__bio--metadata--Numeric--icon'/>
                     <p>{currentVideo.likes}</p>
                 </div>
             </div>

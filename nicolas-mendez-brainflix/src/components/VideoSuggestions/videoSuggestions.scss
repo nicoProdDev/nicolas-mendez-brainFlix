@@ -1,1 +1,72 @@
 @use '../../styles/partials/global' as *;
+
+.videoSuggestions__bio--title{
+    @include PageSection__bodyFooter--mobile;
+    @include bio__margin--mobile;
+    line-height: 1.3;
+    color: $Silver;
+    font-weight: bold;
+}
+
+.videoSuggestions__bio {
+    @include bio__margin--mobile;
+    @include PageSection__bodyFooter--mobile;
+    & > * {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        display: flex;
+    }
+}
+
+.videoSuggestions__bio--cover{
+    width: 90px;
+    border-radius: 0.5rem;
+
+}
+
+.videoSuggestions__bio--info{
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & > :first-child {
+        font-weight: bold;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .videoSuggestions__bio--title {
+        @include bio__margin--tablet;
+    }
+
+    .videoSuggestions__bio {
+        @include bio__margin--tablet;
+    }
+
+    .videoSuggestions__bio--cover {
+        // Add properties for tablets and desktops
+    }
+
+    .videoSuggestions__bio--info {
+        // Add properties for tablets and desktops
+    }
+}
+
+@media (min-width: 1024px) {
+    .videoSuggestions__bio--title {
+        // Add properties for desktops
+    }
+
+    .videoSuggestions__bio {
+        // Add properties for desktops
+    }
+
+    .videoSuggestions__bio--cover {
+        // Add properties for desktops
+    }
+
+    .videoSuggestions__bio--info {
+        // Add properties for desktops
+    }
+}

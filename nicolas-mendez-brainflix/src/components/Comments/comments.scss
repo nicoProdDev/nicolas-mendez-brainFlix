@@ -1,5 +1,7 @@
 @use '../../styles/partials/global' as *;
 
+// css form
+
 .commentsSection__bio{
     @include bio__margin--mobile;
 
@@ -13,6 +15,7 @@
     display: flex;
     @include PageSection__bodyFooter--mobile;
     color: $Silver;
+    border-bottom: solid 1px $Mercury;
 
 }
 
@@ -20,7 +23,7 @@
     width: 40px; 
     height: 40px; 
     border-radius: 50%; 
-    margin-left: 10px; 
+     
     object-fit: cover; 
     border: none;
     position: relative;
@@ -47,26 +50,142 @@
     background-color: rgb(246, 246, 246);
 }
 
-.button__blue{
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: flex-start;
-    background-color: $BrainFlix-Blue;
-    color: $White;
-    border: none;
-    border-radius: 4px;
-    padding: 0.5rem;
-    padding-top: 1rem;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    width: 100%;
+// comments by users
 
-        & > :nth-child(2) {
-        background-color: $BrainFlix-Blue;
-        color: $White;
-        border: none;
-        flex-grow: 1;
+
+
+.commentsSection__bio--output{
+    display: flex;
+    border-bottom: solid 1px $Mercury;
+
+}
+
+.commentsSection__bio--output--text{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @include PageSection__bodyFooter--mobile;
+    line-height: 1.5;
+    
+        & > :first-child{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+                & > :nth-child(2) {
+                    color: $Silver;
+                    
+                }
         }
+}
+
+.userIcon__default{
+    background-color: $Mercury;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+.blue__extended{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.commentsSection__bio--flex--wide{
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .commentsSection__bio {
+        @include bio__margin--tablet;
+    }
+
+    .commentsSection__bio--flex {
+        padding-bottom: 1rem;
+    }
+
+    .profile-icon__comments {
+        position: relative;
+        top: 0px;
+    }
+
+    .commentsSection__bio--flexInput {
+        flex-direction: row;
+        
+            & > :first-child {
+                display: none;
+            }
+    }
+
+    .commentsSection__bio--input {
+        padding-bottom: 0;
+        padding-top: 0;
+        width: 100%;
+        margin-right: 2rem;
+    }
+
+    .commentsSection__bio--output {
+        // Tablet styles here
+    }
+
+    .commentsSection__bio--output--text {
+        // Tablet styles here
+    }
+
+    .userIcon__default {
+        // Tablet styles here
+    }
+    .blue__extended{
+        width: 50%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .commentsSection__bio--flex--wide{
+        display: block;
+        @include PageSection__bodyFooter--mobile;
+        position: relative;
+        left: 57px;
+        padding-bottom: 0.5rem;
+        color: $Silver;
+        font-weight: bold;
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+    .commentsSection__bio {
+        // Desktop styles here
+    }
+
+    .commentsSection__bio--flex {
+        // Desktop styles here
+    }
+
+    .profile-icon__comments {
+        // Desktop styles here
+    }
+
+    .commentsSection__bio--flexInput {
+        // Desktop styles here
+    }
+
+    .commentsSection__bio--input {
+        // Desktop styles here
+    }
+
+    .commentsSection__bio--output {
+        // Desktop styles here
+    }
+
+    .commentsSection__bio--output--text {
+        // Desktop styles here
+    }
+
+    .userIcon__default {
+        // Desktop styles here
+    }
 }

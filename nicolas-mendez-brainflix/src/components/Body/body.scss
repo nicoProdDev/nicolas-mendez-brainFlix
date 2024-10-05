@@ -56,3 +56,53 @@
 
 }
 
+@media (min-width: 768px){
+    .body__bio{
+        @include bio__margin--tablet;
+    }
+
+    .body__bio--title{
+       border-bottom: none;
+       padding-bottom: 0%;
+    }
+
+    .body__bio--metadata{
+        justify-content: space-between;
+            & > *{
+                display: flex;
+
+                & > :first-child {
+                    margin-right: 1rem;
+                }
+            }
+
+    }
+
+    .body__bio--metadata--Numeric{
+        display: flex;
+        align-items: flex-start;
+            & > *{
+                margin-left: 1rem;
+            }
+
+    }
+
+    .body__bio--metadata--Numeric--icon{
+        width: 15px;
+    }
+
+    .body__bio--metadata--Numeric--user{
+        display: flex;
+    }
+
+    .body__bio--description{
+        border-bottom: none;
+        padding-bottom: 0%;
+    }
+
+   
+     
+
+
+}
+
