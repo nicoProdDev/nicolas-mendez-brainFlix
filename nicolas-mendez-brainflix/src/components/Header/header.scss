@@ -9,7 +9,12 @@
 
     & > * {
         padding-bottom: 1rem;
+        text-decoration: none;
     }
+}
+
+.navLink__button{
+    width: 100%;
 }
 
 .searchBar__header--input {
@@ -71,6 +76,10 @@
 .profile-icon-header--wide{
     @extend .profile-icon;
     display: none;
+}
+
+.nav-link {
+    text-decoration: none;
 }
 
 

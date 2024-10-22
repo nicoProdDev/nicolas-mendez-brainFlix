@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './header.scss';
 import logo from '../../assets/Logo/BrainFlix-logo.svg';
 import searchIcon from '../../assets/Icons/Search.svg';
@@ -10,7 +11,7 @@ const Header = () => {
     return (
         <header className='searchBar__header'>
             <div>
-                <img src={logo} alt="logo" className='searchBar__header--logo'/>
+            <NavLink to="/"><img src={logo} alt="logo" className='searchBar__header--logo'/></NavLink>
             </div>
             <div className='searchBar__header--input'>
                 <div>
@@ -20,15 +21,19 @@ const Header = () => {
                 <img className="profile-icon-header" src={userIcon} alt="profile picture" />
             </div>
 
-            <div className='button__blue--parent'>
-                <div className='button__blue'>
-                    <img src={uploadIcon} alt="upload icon" />
-                    <button>UPLOAD</button>
+            <NavLink to="/upload" className='navLink__button'>
+                <div className='button__blue--parent'>
+                    <div className='button__blue'>
+                        <img src={uploadIcon} alt="upload icon" />
+                        <button>UPLOAD</button>
+                    </div>
+
+                    <img className="profile-icon-header--wide" src={userIcon} alt="profile picture" />
+
                 </div>
+            </NavLink>
 
-                <img className="profile-icon-header--wide" src={userIcon} alt="profile picture" />
-
-            </div>
+            
 
         </header>
     );

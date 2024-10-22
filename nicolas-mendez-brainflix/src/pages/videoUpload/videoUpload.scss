@@ -1,0 +1,182 @@
+@use '../../styles/partials/global' as *;
+
+
+.uploadVideo__header--padding{
+    padding-inline: $bio__margin-inline--mobile;
+}
+
+.uploadVideo__header{
+    @include PageSection__header--mobile;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    border-top: solid 1px $Mercury;
+    
+}
+
+    .uploadVideo__textForm {
+        @include PageSection__bodyFooter--mobile;
+            color: $Silver;
+        
+    }
+
+    .uploadVideo__textForm--img {
+        @include PageSection__bodyFooter--mobile;
+        color: $Silver;
+
+        & > :first-child {
+            padding-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        padding-bottom: 1rem;
+    }
+
+    @mixin uploadVideo__box{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding-left: 0.5rem;
+        @include PageSection__bodyFooter--mobile;
+        border: solid 1px $Silver;
+        border-radius: 4px;
+        background-color: rgb(246, 246, 246);
+        width: 100%;
+        color: black;
+        &::placeholder {
+            color: black;
+        }
+    }
+
+    .uploadVideo__input--title {
+        @include uploadVideo__box;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .uploadVideo__input--description{
+        @include uploadVideo__box;
+        padding-top: 0.5rem;
+        padding-bottom: 5rem;
+
+    }
+
+.uploadVideo__button {
+    margin-top: 1rem;
+        & > :nth-child(2) {
+            display: flex;
+            width: 100%;
+            background-color: white;
+            border: none;
+    }
+}
+
+.uploadVideo__buttonCancel{
+    margin-top: 2rem;
+    width: 100%;
+    background-color: white;
+    border: none;
+    color: $BrainFlix-Blue;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+
+    .uploadVideo__header--padding{
+        padding-inline: $bio__margin-inline--tablet;
+    }
+
+    .uploadVideo__header {
+        @include Section__header--wide;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: solid 1px $Mercury;
+    }
+
+    .uploadVideo__textForm {
+        border-bottom: solid 1px $Mercury;
+        padding-bottom: 1rem;
+    }
+
+    .uploadVideo__textForm--img {
+        & > :first-child {
+            padding-top: 2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+        }
+
+    }
+
+    .uploadVideo__input--title {
+        // Add properties for tablet screens here
+    }
+
+    .uploadVideo__input--description {
+        // Add properties for tablet screens here
+    }
+
+    .uploadVideo__button {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 50%;
+        margin-left: auto;
+        padding-top: 1rem;
+;
+    }
+
+    .uploadVideo__buttonCancel {
+        margin-top: 0rem;
+    }
+
+}
+
+@media (min-width: 1024px) {
+
+    .uploadVideo__header--padding{
+        padding-inline: $bio__margin-inline--wide;
+    }
+
+    .uploadVideo__header {
+        // Add properties for desktop screens here
+    }
+
+    .uploadVideo__textForm {
+        display: flex;
+    }
+
+    .uploadVideo__textForm--img {
+        max-width: 32%;
+        margin-right: 2rem;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .uploadVideo__textForm--form{
+        padding-top: 2rem;
+        width: 100%;
+    }
+
+    .uploadVideo__input--title {
+        margin-top: 0.5rem;
+    }
+
+    .uploadVideo__input--description {
+        // Add properties for desktop screens here
+    }
+
+    .uploadVideo__button {
+        // Add properties for desktop screens here
+    }
+
+    .uploadVideo__buttonCancel {
+        margin-top: 0rem;
+    }
+}
