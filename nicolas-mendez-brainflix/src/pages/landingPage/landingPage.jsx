@@ -13,7 +13,7 @@ const Landing = ({ currentVideo, currentIndex, handleVideoSelect }) => {
       <div className='bio__flex'>
         <div className='bio__flex--bodyComments'>
           <Body currentVideo={currentVideo} />
-          <Comments currentVideo={currentVideo} />
+          {/* <Comments currentVideo={currentVideo} /> */}
         </div>
         <div>
           <VideoSuggestions 
