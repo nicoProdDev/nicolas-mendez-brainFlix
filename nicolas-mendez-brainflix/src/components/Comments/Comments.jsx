@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import './comments.scss';
 import userIcon from '../../assets/Images/Mohan-muruge.jpg';
 import commentIcon from '../../assets/Icons/add_comment.svg'
@@ -15,7 +15,7 @@ const Comments = ({ currentVideo }) => {
     return (
         <div className='commentsSection__bio'>
             <div>
-                <p>{`${currentVideo.comments.length} comments`}</p>
+                <p>{`${currentVideo?.length} comments`}</p>
             </div>
 
             <h3 className='commentsSection__bio--flex--wide'>JOIN THE CONVERSATION</h3>
@@ -34,7 +34,7 @@ const Comments = ({ currentVideo }) => {
                 </div>
             </div>
             <div>
-                {currentVideo.comments.map((comment, index) => (
+                {currentVideo?.map((comment, index) => (
                     <div key={index} className='commentsSection__bio--output'>
                         <div className='userIcon__default'>
                             <p></p>
