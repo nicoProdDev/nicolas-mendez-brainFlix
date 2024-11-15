@@ -4,30 +4,28 @@ import Video from '../../components/video/video';
 import Body from '../../components/Body/body';
 import Comments from '../../components/Comments/Comments';
 import VideoSuggestions from '../../components/VideoSuggestions/VideoSuggestions';
-import Data from '../../data/video-details.json'; // Adjust the import path as necessary
 import {baseUrl, API_KEY} from "../../utils/utils";
 import axios from 'axios';
 
 const Landing = () => {
-  const { id } = useParams();
-  const [currentIndex, setCurrentIndex] = useState(0);
+
   const navigate = useNavigate();
   const [videos, setVideos] = useState([]);
   const [videoDetails, setVideoDetails] = useState([]);
   const [videoCommentDetails, setVideoCommentDetails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  // const [videoSelected, handleVideoSelect]
+  const [videoSelected, handleVideoSelect] = useState(0);
 
-  const handleVideoSelect = (index) => {
-    setCurrentIndex(index);
-    if (index === 0) {
-      navigate('/');
-    } else {
-      const selectedVideo = videos[index];
-      navigate(`/videos/${selectedVideo.id}`);
-    }
-  };
+  // const handleVideoSelect = (index) => {
+  //   setCurrentIndex(index);
+  //   if (index === 0) {
+  //     navigate('/');
+  //   } else {
+  //     const selectedVideo = videos[index];
+  //     navigate(`/videos/${selectedVideo.id}`);
+  //   }
+  // };
 
   useEffect(() => {
       const getVideoDetails = async (videoId) => {
@@ -46,11 +44,17 @@ const Landing = () => {
       try {
         setLoading(true);
         // Make a GET request to the Discover endpoint
-        const response = await axios.get(`${baseUrl}videos/?api_key=${API_KEY}}`);
+        const response = await axios.get(`${baseUrl}videos/?api_key=${API_KEY}`);
         setVideos(response.data);
 
-        getVideoDetails(response.data[0].id)
-        setVideoCommentDetails(response.data[0].id.comments)
+        await getVideoDetails(response.data[videoSelected].id);
+        setVideoCommentDetails(response.data[videoSelected].comments);
+        if (videoSelected === 0) {
+          navigate('/');
+        } else {
+          const selectedVideo = response.data[videoSelected];
+          navigate(`/videos/${selectedVideo.id}`);
+        }
 
         setLoading(false);
       } catch (error) {
@@ -61,20 +65,7 @@ const Landing = () => {
     };
 
     fetchVideos();
-  }, []);
-
-  const commentDetails = videoDetails.comments;
-
-  console.log(commentDetails);
-
-
-
-
-
-  // const currentVideo = videos[currentIndex] || videos[0];
-
-
-
+  }, [videoSelected, navigate]);
 
 
   //END
@@ -102,9 +93,9 @@ const Landing = () => {
         </div>
         <div>
           <VideoSuggestions 
-            videos={Data} 
-            currentIndex={currentIndex} 
-            handleVideoSelect={handleVideoSelect} 
+            videos={videos} 
+            currentIndex={videoSelected} 
+            handleVideoSelected={handleVideoSelect} 
           />
         </div>
       </div>

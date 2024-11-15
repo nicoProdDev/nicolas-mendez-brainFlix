@@ -1,14 +1,14 @@
 import React from 'react';
 import './videoSuggestions.scss';
 
-const VideoSuggestions = ({ videos, currentIndex, handleVideoSelect }) => {
+const VideoSuggestions = ({ videos, currentIndex, handleVideoSelected }) => {
   return (
     <div>
       <h2 className='videoSuggestions__bio--title'>NEXT VIDEOS</h2>
       <ul className='videoSuggestions__bio'>
         {videos.map((video, index) => (
           index !== currentIndex && (
-            <li key={index} onClick={() => handleVideoSelect(index)}>
+            <li key={index} onClick={() => handleVideoSelected(index)}>
               <div>
               <img 
                 src={video.image} 
